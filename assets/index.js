@@ -10,7 +10,7 @@ const InitScreen = document.querySelector(".init")
 const weatherComponent = document.querySelector(".weatherComponent")
 const cityComponent = document.querySelector(".cityComponent")
 const mapComponent = document.querySelector(".mapComponent")
-const settingsComponent = document.querySelector(".settingsComponent")
+const profilComponent = document.querySelector(".profilComponent")
 const childnodeListTabs = Array.from(navBar.childNodes).filter(card => card.tagName === "DIV");
 const btnSearchCity = document.querySelector(".btnSearch")
 const inputSeachCity = document.querySelector('.inputCitySearch');
@@ -49,26 +49,26 @@ var descricaoClima = {
 
 };
 var descricaoClimaPt = {
-    "clear sky": "céu limpo",            
-    "few clouds": "poucas nuvens",     
-    "scattered clouds": "nuvens dispersas",  
-    "broken clouds": "nuvens quebradas",  
-    "overcast clouds": "céu nublado",  
-    "light rain": "chuva leve",  
-    "moderate rain": "chuva moderada",  
-    "heavy intensity rain": "chuva forte",  
-    "very heavy rain": "chuva muito forte",  
-    "extreme rain": "chuva extrema",  
-    "thunderstorm": "tempestade",  
-    "snow": "neve",  
-    "mix snow/rain": "chuva com neve",  
-    "mist": "névoa",  
-    "haze": "neblina",  
-    "smoke": "fumaça",  
-    "dust": "poeira",  
-    "sand": "areia",  
-    "volcanic ash": "cinzas vulcânicas", 
-    "squalls": "rajadas de vento",  
+    "clear sky": "clear sky",            
+    "few clouds": "few clouds",     
+    "scattered clouds": "scattered clouds",  
+    "broken clouds": "broken clouds",  
+    "overcast clouds": "overcast clouds",  
+    "light rain": "light rain",  
+    "moderate rain": "moderate rain",  
+    "heavy intensity rain": "heavy intensity rain",  
+    "very heavy rain": "very heavy rain",  
+    "extreme rain": "extreme rain",  
+    "thunderstorm": "thunderstorm",  
+    "snow": "snow",  
+    "mix snow/rain": "mix snow/rain",  
+    "mist": "mist",  
+    "mist": "mist",  
+    "smoke": "smoke",  
+    "dust": "dust",  
+    "sand": "sand",  
+    "volcanic ash": "volcanic ash", 
+    "squalls": "squalls",  
     "tornado": "tornado",  
 };
 var nameCityData,
@@ -83,7 +83,7 @@ var nameCityData,
     weather = navBar.children[1].children[1],
     cities = navBar.children[2].children[1],
     map = navBar.children[3].children[1],
-    settings =navBar.children[4].children[1];
+    profil =navBar.children[4].children[1];
 
 
 btnSearchCity.addEventListener('click',createNewcity)
@@ -126,12 +126,12 @@ function removeTextBtnNav(){
         weather.innerText ="";
         cities.innerText ="";
         map.innerText ="";
-        settings.innerText ="";
+        profil.innerText ="";
     }else{
         weather.innerText ="Weather";
         cities.innerText ="Cities";
         map.innerText ="Map";
-        settings.innerText ="Settings";
+        profil.innerText ="Profil";
     }
 
 }
@@ -139,7 +139,7 @@ function removeTextBtnStart() {
     if (phoneScreen.matches) {
       btnStart.innerText = "";
     } else {
-      btnStart.innerText = "Iniciar";
+      btnStart.innerText = "Start";
     }
 }
 function increaseScreenSize()  {   
@@ -215,8 +215,8 @@ function toggleTab(currentTab,newTab,showheader){
         case 'map':
             currentTab = mapComponent;
             break;
-        case 'settings':
-            currentTab = settingsComponent;
+        case 'profil':
+            currentTab = profilComponent;
             break;
         default:
             break;
@@ -236,8 +236,8 @@ function toggleTab(currentTab,newTab,showheader){
         case 'map':
             newTab = mapComponent;
             break;
-        case 'settings':
-            newTab = settingsComponent;
+        case 'profil':
+            newTab = profilComponent;
             break;
         default:
             break;
@@ -291,8 +291,8 @@ function checkCurrentTab(){
         case 'map':
         elemento = 'map'
         break;
-        case 'settings':
-        elemento = 'settings'
+        case 'profil':
+        elemento = 'profil'
         break;
         default:
         break;
