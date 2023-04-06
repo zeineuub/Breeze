@@ -3,7 +3,7 @@ const btnStart = document.querySelector(".btn-start");
 const warning =  document.querySelector(".warningLocationUser");
 const btnConfirmLocation =  document.querySelector(".confirmLocation");
 const btnDeniedLocation = document.querySelector(".deniedLocation");
-
+const citiesOption = document.querySelector('.option.cities');
 const navBar = document.querySelector(".header");
 const Loader = document.querySelector(".containerLoad")
 const InitScreen = document.querySelector(".init")
@@ -85,7 +85,11 @@ var nameCityData,
     map = navBar.children[3].children[1],
     profil =navBar.children[4].children[1];
 
+    
 
+citiesOption.addEventListener('click', () => {
+    loadHistory();
+});
 btnSearchCity.addEventListener('click',createNewcity)
 btnConfirmLocation.addEventListener('click', checkPermission)
 btnStart.addEventListener('click', showWarning)
@@ -826,7 +830,7 @@ async function makeRequisitionTabCities(){
 
     let Apikey = "5182a2574871dbd140787ce3dc109c97";
 
-    const dataFortaleza = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=fortaleza&units=metric&mode=json&appid=${Apikey}`)
+    const dataFortaleza = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=tunisia&units=metric&mode=json&appid=${Apikey}`)
     let respostaFortaleza = await dataFortaleza.json();
 
     const dataBrasilia = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Brasilia&units=metric&mode=json&appid=${Apikey}`)
@@ -975,7 +979,7 @@ async function createNewcity(){
                 imgClimaData = descricaoClima[chave]
             }
         }
-
+        saveToHistory(nomeData)
         const cardShape = `
         <div class="loadedCities ${nomeData}">
             <div class="ilustacaoClimaSearch">
@@ -993,16 +997,42 @@ async function createNewcity(){
 
         let  ultimo = containerCards.lastElementChild;
         let bar = containerCards.children[0];
-        ultimo.remove()
         bar.insertAdjacentHTML('afterend', cardShape)
     }
     inputSeachCity.blur();
     createCardCity()
-}   
+}
+function saveToHistory(city) {
+
+    // Get cities saved to local history into cities array
+    getSearchHistory();
+
+    // Add the city to the local storage array
+    if (!cities.includes(city)) {
+        cities.push(city);
+    }
+
+    // Set local storage
+    setSearchHistory();
+}
+
+// Get cities saved in local storage
+function getSearchHistory() {
+    if (localStorage.getItem("cities") === null) {
+        cities = [];
+    } else {
+        cities = JSON.parse(localStorage.getItem("cities"));
+    }
+}
+// Set local storage
+function setSearchHistory() {
+    localStorage.setItem("cities", JSON.stringify(cities));
+}
+
 function erroNameCity(){
     let placeholder = document.querySelector(".barToSearchCity span ")
     let input = document.querySelector(".barToSearchCity")
-    placeholder.innerText = " Digite um nome válido"
+    placeholder.innerText = "Please enter a valid name"
     placeholder.style.color= "#a91d1d"
     input.classList.add("active")
 
@@ -1013,7 +1043,56 @@ function erroNameCity(){
         input.classList.remove("active")
     },1500)
 }
-
+async function loadHistory(){
+    
+    let containerCards = document.querySelector('.cityComponent');
+    getSearchHistory()
+    let data
+    for(let city of cities) {
+        if (containerCards.querySelector(`.${city}`)) {
+            continue;
+        }
+        data = await makeRequisitionNewCity(city);
+        
+        async function load(){
+            await data
+            let imgClimaData
+    
+            let nomeData = data.name
+            console.log(nomeData)
+            let temperaturaData = parseInt(data.main.temp)
+            let climaData = data.weather[0].description
+            let i = new Date();
+            let horaData = i.getHours();
+            for (const chave in descricaoClima) {
+                if (chave == climaData) {
+                    imgClimaData = descricaoClima[chave]
+                }
+            }
+            const cardShape = `
+            <div class="loadedCities ${nomeData}">
+                <div class="ilustacaoClimaSearch">
+                    <img src="${imgClimaData}" alt="clima">
+                </div>
+                <div class="infoCitySearch">
+                    <div class="name">${nomeData}</div>
+                    <div class="horario">${horaData}:00</div>
+                </div>
+                <div class="forecastCitySearch"></div>
+                <div class="temperatura">
+                    <span>${temperaturaData}°</span>
+                </div>
+            </div>`
+    
+            let  ultimo = containerCards.lastElementChild;
+            let bar = containerCards.children[0];
+            bar.insertAdjacentHTML('afterend', cardShape)
+        }
+        load();
+    }
+    
+    
+}
 makeRequisitionTabCities()
 removeTextBtnStart();
 removeTextBtnNav();
