@@ -5,18 +5,17 @@
 
 
 <p align="center" margin-left="1em">
-O objetivo principal do projeto é aprimorar minhas habilidades com javaScript. Nesse projeto utilizo duas ferramentas: Nominatim, uma ferramenta de busca de nomes de cidades baseada na latitude e longitude do user, e a OpenWeatherMap é uma plataforma que fornece informações meteorológicas em tempo real e previsões para mais de 200 mil cidades em todo o mundo. A aplicação oferece as seguintes informações:
+The main goal of the project is to improve my JavaScript skills. For this project, I use two tools: Nominatim, a search tool for city names based on the user's latitude and longitude, and OpenWeatherMap, a platform that provides real-time weather information and forecasts for more than 200,000 cities worldwide. The application provides the following information:
 <ul> 
-<li>‣ Previsão do tempo baseado na cidade do usuario.</li>
-<li>‣ Sensação térmica.</li>
-<li>‣ Umidade do ar</li>
-<li>‣ Velocidade do vento</li>
-<li>‣ Visibilidade</li>
-<li>‣ Previsão metereológica dos próximos cinco dias</li>
-<li>‣ Pesquisar a temperatura atual de qualquer cidade</li>
+<li>‣ Weather forecast based on the user's city</li>
+<li>‣ Thermal sensation.</li>
+<li>‣ Air humidity</li>
+<li>‣ Wind speed</li>
+<li>‣ Visibility</li>
+<li>‣ Meteorological forecast for the next five days.</li>
+<li>‣ Search for the current temperature of any city.</li>
 </ul>
-A aplicação ainda está em desenvolvimeto, em breve, adicionarei o mapa climático das cidades selecionadas e um painel de configurações ilustrativo.
-
+The application is still under development, and I will soon add a weather map of selected cities and an illustrative settings panel.
 </p>
 <br>
 <img align="center" alt="Js"  height="auto" width="100%" src="./assets/img/readme/Climathpc.png">
@@ -24,7 +23,7 @@ A aplicação ainda está em desenvolvimeto, em breve, adicionarei o mapa climá
 <br><img align="center" alt="Js" height="auto" width="100%" src="./assets/img/readme/mockup.png"><br>
 
 
-<br>Ferramentas utilizadas:
+<br>Tools used:
 
 <div margin="10px"align="start" valign="top"><br>
 <img align="center" alt="Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
@@ -36,7 +35,3 @@ A aplicação ainda está em desenvolvimeto, em breve, adicionarei o mapa climá
 <img align="center" alt="git" height="30" src="./assets/img/readme/fontAwesome.webp">
 </div><br>
 
-Meu linkedin:
-
-<br><a aling="center" href="https://www.linkedin.com/in/talyson-ferreira-5a5682136/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=footer"/>
