@@ -952,17 +952,34 @@ async function makeRequisitionNewCity(value){
     
     return resposta
 }
+function checkCity( city){
+    console.log(city)
+    // Get cities saved to local history into cities array
+    getSearchHistory();
+
+    // Add the city to the local storage array
+    if (cities.includes(city)) {
+        console.log('yes')
+        return true;
+    } else {
+        return false;
+    }
+}
 async function createNewcity(){
     
     let valueInput = document.querySelector('.inputCitySearch');
     let containerCards = document.querySelector('.cityComponent');
     let data
-
+    
     if(!valueInput.value  == ""){
-        data = await makeRequisitionNewCity(valueInput.value)
-        valueInput.value = ""
-    }else{
-        console.log("sem dados")
+        city = valueInput.value.toLowerCase();
+        if(checkCity(city)==false ) {
+            data = await makeRequisitionNewCity(valueInput.value)
+            valueInput.value = ""
+        }
+          
+    }else {
+        console.log("no data")
     }
     
     async function createCardCity(){
@@ -1005,6 +1022,7 @@ async function createNewcity(){
 function saveToHistory(city) {
 
     // Get cities saved to local history into cities array
+    city = city.toLowerCase();
     getSearchHistory();
 
     // Add the city to the local storage array
