@@ -1,0 +1,361 @@
+/**
+* Template Name: Bethany - v4.9.1
+* Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  background-color: #ffffff17;
+}
+
+a {
+  color: #0368B0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0368B0;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #0368B0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #0368B0;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  top: 20px;
+}
+
+#header .header-container {
+  background: #ffffff17;
+}
+
+#header.header-scrolled {
+  background: #ffffff17;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  top: 0;
+}
+
+#header .logo {
+  overflow: hidden;
+  padding: 16px 30px 12px 30px;
+  background: #0368B0;
+}
+
+#header .logo h1 {
+  font-size: 26px;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+@media (max-width: 992px) {
+  #header {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    top: 0;
+    background: #0368B0;
+  }
+
+  #header.header-scrolled,
+  #header .header-container {
+    background: #0368B0;
+  }
+
+  #header .logo {
+    padding-left: 0;
+  }
+
+  #header .logo h1 {
+    font-size: 24px;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #0B131E;
+}
+
+.section-title {
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #0368B0;
+  bottom: 0;
+  left: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  text-align: center;
+  padding: 20px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #212832;
+}
+
+.services .icon-box .icon {
+  margin: 0 auto;
+  /* width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  border: 1px solid #009970;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: ease-in-out 0.3s;
+  color: #009970;
+}
+
+.services .icon-box .icon i {
+  font-size: 28px;
+}
+
+.services .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.services .icon-box h4 a {
+  color: #36343a;
+  transition: ease-in-out 0.3s;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+ /*.services .icon-box:hover {
+   border-color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1); 
+}
+
+.services .icon-box:hover h4 a {
+  color: #009970;
+}
+
+.services .icon-box:hover .icon {
+  color: #fff;
+  background: #009970;
+}*/
+
+.services .info {
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.services .recommendation-form {
+  width: 100%;
+  padding: 10px;
+  
+}
+
+.services .recommendation-form .form-group {
+  padding-bottom: 8px;
+}
+
+.services .recommendation-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.services .recommendation-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.services .recommendation-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.services .recommendation-form .loading {
+  display: none;
+  text-align: center;
+  padding: 15px;
+}
+
+.services .recommendation-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.services .recommendation-form input,
+.services .recommendation-form textarea {
+  border-radius: 20;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.services .recommendation-form input {
+  height: 44px;
+}
+
+.services .recommendation-form textarea {
+  padding: 10px 12px;
+}
+
+.services .recommendation-form button[type=submit] {
+  background: #0368B0;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+.services .recommendation-form label {
+  display: flex;
+color: #0368B0; 
+align-items:flex-start; 
+justify-content:flex-start;
+text-align: start;
+}
+
+
+.services .recommendation-form button[type=submit]:hover {
+  background: #0368B0;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
